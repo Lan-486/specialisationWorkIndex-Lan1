@@ -26,7 +26,7 @@
     <header>
 <!-- !!!!! -->
 <!--    change this to your preferred online name  -->
-        <h1>Lan's Assignment 1 work</h1>
+        <h1>Aquarium with Me — System Design Document</h1>
     </header>
 
     <div class="mainNavContainer">
@@ -36,26 +36,102 @@
             <a href="">Assignment 2</a>
         </nav>
 
-        <main>
-            <section id="scenario-section">
-                <h3>Scenario</h3>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto asperiores deleniti, dolore, fugiat harum ipsum magni natus nemo nobis quos, totam veniam. Assumenda eaque labore minus praesentium quidem sapiente?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto asperiores deleniti, dolore, fugiat harum ipsum magni natus nemo nobis quos, totam veniam. Assumenda eaque labore minus praesentium quidem sapiente?</p>
+        <main class="prose">
+
+            <section id="scenario-section" class="prose">
+                <h2>1.Design Scenario Analysis and Response</h2>
+                <h3>Scenario 5: Dynamic Soundtrack-er</h3>
+                <h4>Prompt: </h4>
+                 <p>Design a way for users to create an ongoing dynamic soundtrack suited to a particular environment or activity of your choice.</p>
+                <h4>Context: </h4>
+                 <p>Many different situations, such as studying, exercising or table top role playing, may benefit from a soundtrack that can respond to their unfolding solo or group dynamics. While users' inputs may be minimal or over long intervals, users should still be able to meaningfully interact with the instrument.</p>
+                <h4>Discussion: </h4>
+                 <p>The core of this scenario is an ongoing dynamic soundtrack rather than the playback of a single fixed song. I understand “dynamic” as meaning that the soundtrack can respond to the user’s actions and gradually change over time. It does not need to generate a completely new song every few seconds. Instead, users can add, remove or combine different sound layers, while the system automatically creates smaller changes. This provides a balance between user control and variation: users can decide the overall atmosphere, but the sound will not feel completely fixed or overly repetitive.</p> 
+                  <p>In this scenario, the user’s attention will mainly remain on studying, drawing or another creative activity. If the interaction requires frequent clicking or adjustment, it may become distracting and work against the project’s purpose. Therefore, the interaction should be simple and occasional. Users can select several sounds at the beginning, leave the soundtrack playing in the background, and return when they want to change the atmosphere. Although their inputs may be infrequent, each action should create a noticeable change in both the sound and the visual state of the interface.</p>
+                 <p>The main values of the project are calmness, approachability and user control. It should help users concentrate without demanding their attention, and the overall experience should feel relaxing rather than technical. Users should be able to understand how their choices affect the soundtrack without reading long instructions or adjusting complicated audio settings.</p>
+                <h4>Purpose: </h4>
+                 <p>The project allows users to create an ambient soundtrack suited to studying and creative activities. Users can combine sounds through simple selections, and the soundtrack will continue playing after they stop interacting. They can return at any time to adjust the sound environment, without requiring any prior musical knowledge.</p>
+                <h4>Worth</h4>
+                 <p>The instrument should be approachable because its initial appearance should not overwhelm users with professional audio controls. It should also be calm and low-interruption, as the soundtrack is intended to accompany another activity rather than become the user’s primary task.</p>
             </section>
 
-            <section>
-                <h3>Response</h3>
+            <section id="overview-section" class="prose">
+                <h2>2.Project Overview</h2>
+                <h3>Synopsis</h3>
+                 <p>Aquarium with Me is a browser-based ambient music instrument designed for studying, drawing and other creative activities. Users select different sea creatures, with each creature representing a musical layer. When a creature enters the aquarium, its sound gradually fades in. When it is clicked again, the creature leaves and its sound fades out. The sea creatures and bubbles remain in motion, while the soundtrack continues playing even after the user stops interacting.</p>
+                <h3>Response to Purpose and Worth</h3>
+                 <p>Aquarium with Me uses animated sea creatures instead of technical audio controls, making it easier for people without musical knowledge to create a soundtrack. Each creature represents a different sound layer, so the aquarium is not just decoration—it is also the instrument.</p>
+                 <p>Users do not need to interact with it constantly. After choosing their creatures, they can return to studying, drawing or other creative activities while the music continues. They can come back at any time to change the sound combination.</p>
+                 <p>Gentle animations and sounds that fade in and out help create a calm experience. Random bubbles and environmental sounds add small changes over time, while the aquarium theme makes the interaction more playful. There are no scores, tasks or failure states, allowing users to explore sound without pressure.</p>
+
             </section>
 
-            <section>
-                <h3>Framing</h3>
+            <section id="framing-section" class="prose">
+                <h2>3. Project Framing</h2>
+                <h3>Core concept</h3>
+                 <p>The core concept is a website that allows users to create dynamic soundtracks for studying and creative work through occasional, low-frequency interaction. Visual sound layers and subtle random changes allow users to customise the experience while helping them relax and focus on their main task.</p>
+                <h3>Inspiration</h3>
+                 <p>Aquarium with Me is inspired by Fantasy Aquarium, a casual idle game developed by MOON SCAPE. Even when users are not interacting with the game, the fish continue to swim randomly, creating a low-pressure experience and a sense of visual companionship. While Fantasy Aquarium focuses on collecting and raising fish, Aquarium with Me places greater emphasis on sound and simple interaction.</p>
+                <h3>Interaction and sound system</h3>
+                 <p>In Aquarium with Me, users create or change the dynamic soundtrack by clicking to add or remove sea creatures from the aquarium. Each type of sea creature represents a different sound layer. When a creature is added, its sound gradually fades in; when it is removed, the sound fades out. Bubbles will also appear randomly in the aquarium, representing the smaller random sounds within the dynamic soundtrack.</p>
+                <h3>Extended Technique</h3>
+                 <p>This project will use randomisation as its extended technique. The main random elements are the bubbles in the water. Randomisation will affect when and where bubbles appear, which bubble sound is played, and the volume of secondary sounds. For example, the size of a bubble may represent a slight change in volume.</p>
+                 <p>These variations are intended to prevent the music from becoming mechanically repetitive. Even after users stop interacting, the soundtrack will continue to develop through subtle changes. However, users will still control the main sound layers, while the random system will only manage smaller variations.</p>
+                <h3>Characterisation</h3>
+                 <p>-Calm</p>
+                 <p>-Dreamy</p>
+                 <p>-Playful</p>
+                 <p>-Colorful</p>
+                 <p>-slow-paced</p>
+                 <p>-Visually alive</p>
+                <h3>Included and Excluded Elements</h3>
+                <p>The project will include a browser-based aquarium interface, animated sea creatures and several looping sound layers created in Ableton Live or Reaper. Each creature will control one layer of the soundtrack. HTML will provide the page structure, CSS will create simple movement and visual feedback, and JavaScript will control clicking, keyboard input and audio playback. The Web Audio API will be used to fade sounds in and out. Math.random() will control the timing and position of bubbles and occasional bubble sounds. Holding the spacebar will also create a temporary group of bubbles and light sound effects.</p>
+                <p>The project will not include AI-generated music. The soundtrack will use a small collection of self-made loops and recorded or appropriately licensed sound effects. Features from aquarium games, such as feeding, growth, shops, coins and scoring, will also be excluded. The website will not include user accounts, saved progress, multiplayer controls, music uploads or complex professional audio settings. These features are excluded to keep the experience calm and easy to understand, while making the project achievable within the semester.</p>
+                 
             </section>
             
-            <section>
-                <h3>Interactive design analysis</h3>     
-            </section>  
+            <section id="interactive-design-section" class="prose">
+                <h2>4. Interactive Design Analysis</h2>     
+                <h3>Example 1: 
+                    <a href="https://mynoise.net/NoiseMachines/jungleNoiseGenerator.php"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    The Ultimate Jungle Noise Generator
+                 </a>
+                </h3>
+                 <p>The Ultimate Jungle Noise Generator divides its soundscape into several audio layers. Each slider controls a different sound, while presets allow users to quickly create different combinations. However, the sliders only take up a small part of the webpage, and their labels only appear when the mouse hovers over them.</p>
+                 <p>The page also contains a large amount of text and other settings, which makes the interface feel crowded. Personally, I would find it tiring to understand and adjust all this information, rather than helpful for relaxing before studying or doing creative work.</p>
+                 <p>This influenced Aquarium with Me to keep the idea of layered sound but present it more simply. Each sound layer will be represented by a sea creature instead of a technical slider. Users can click a creature to add or remove its sound. The page will also use less text and fewer controls, making each sound easier to recognise and creating a calmer experience.</p>
+                <h3>Example 2: 
+                    <a href="https://holdspace.surge.sh/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Holdspace
+                 </a>
+                </h3>
+                 <p>Holdspace is based on one simple interaction: holding and releasing the spacebar. When the user presses the key, the sound and abstract visuals respond immediately. This makes the relationship between the action and its result easy to understand. The limited controls also encourage users to experiment without needing to learn a complex interface. However, without clear instructions, some users may not immediately realise that the spacebar is the main control.</p>
+                 <p>This influenced Aquarium with Me to use a small number of clear interactions. Users will click sea creatures to add or remove their sounds, and each creature will immediately respond through movement or light when its sound becomes active. Selected creatures will also have a clear active state.</p>
+                 <p>Inspired by Holdspace, holding the spacebar in Aquarium with Me will create a large number of bubbles, with light bubble sounds playing at the same time. Releasing the key will stop the effect. This interaction will add a playful and stress-relieving element without making the interface more complicated.</p>
+                <h3>Example 3: 
+                    <a href="https://publicmechanics.com/projects/bubble-bath/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Bubble Bath
+                 </a>
+                </h3>
+                 <p>Bubble Bath uses multiple audio loops that users can combine to create ambient music. It also offers an automatic mode that randomly changes the combination over time. This helps the music continue without repeating in exactly the same way. The changing colours in the background also support the calm and slowly developing soundscape.</p>
+                 <p>However, complete randomisation may reduce the user’s sense of control because the system decides which sounds are added or removed. This influenced Aquarium with Me to balance user choice with smaller random events. Users will control the main sound layers by selecting sea creatures, and the system will not randomly remove their choices. Instead, Math.random() will be used for occasional bubble sounds, environmental sounds and their timing. These random changes will remain subtle so that the soundtrack feels alive without disturbing its calm atmosphere.</p>
+                <h3>Example 4: 
+                    <a href="https://moodist.mvze.net/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Moodist
+                 </a>
+                </h3>
+                 <p>Moodist is a browser-based ambient sound generator that allows users to combine sounds such as rain, ocean waves, birds and cafés. Each sound is represented by a simple icon, helping users understand what they may hear before selecting it. The interface does not require registration or knowledge of technical audio controls, making it easy to use.</p>      
+                 <p>Moodist’s animal sound category is particularly relevant to Aquarium with Me. Familiar animal icons make sounds easier to recognise without relying on long text. Similarly, each sea creature in my project will represent a sound with a related character. For example, a whale may produce a deep ambient sound, while small fish may create lighter notes. Selected creatures will also glow or move more actively, making their current state clear.</p>
+                 <p>This influenced Aquarium with Me to use recognisable sea creatures as both visual elements and sound controls. Users can create and manage their soundtrack through images instead of technical sliders or additional menus.</p>
 
-            <section>
-                <h3>Example 1</h3>     
             </section>
 
         </main>
