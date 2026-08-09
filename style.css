@@ -1,15 +1,18 @@
 /*!!!!!*/
 /*add in your own font imports here*/
 /*remember to update them in the rest of the CSS : eg the body selector*/
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
 
 /*!!!!!*/
 /*change out, and/or add colours to the colour scheme*/
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
     /* https://lospec.com/palette-list/1bit-monitor-glow */
-    --colour-1: #222323;
-    --colour-2: #f0f6f0;
+    --colour-1: #09032b;
+    --colour-2: #e5f6f4;
+    --heading-colour: #176b75;
+    --accent-colour: #d96f64;
+    --light-accent: #cfeceb
 }
 
 /* this swaps the colour order to account for user's OS dark mode */
@@ -17,8 +20,11 @@
 /*remember to update the colours here too to reflect the above changes*/
 @media (prefers-color-scheme: dark) {
     :root{
-        --colour-1: #f0f6f0;
-        --colour-2: #222323;
+        --colour-1: #09032b;
+        --colour-2: #e5f6f4;
+        --heading-colour: #176b75;
+        --accent-colour: #d96f64;
+        --light-accent: #cfeceb
     }
 }
 
@@ -26,7 +32,7 @@
 body {
     background-color: var(--colour-2);
     color: var(--colour-1);
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     line-height: 1.5;
     padding: 1rem;
     display: flex;
@@ -132,4 +138,20 @@ footer {
 /* compact breakpoint : phone in portrait */
 @media (width < 600px) {
 
+}
+body h1,
+body h2,
+body h3,
+body h4 {
+    color: var(--heading-colour);
+}
+
+body a,
+body a:visited {
+    color: var(--accent-colour);
+}
+
+body a:hover,
+body a:focus {
+    color: var(--heading-colour);
 }
