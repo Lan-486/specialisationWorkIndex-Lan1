@@ -76,9 +76,17 @@ aside {
 }
 
 footer {
+    width: 100%;
+    align-self: stretch;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     margin-block-start: 3rem;
+}
+footer p {
+    width: 100%;
+    text-align: center;
 }
 
 /*technique from Kevin Powell*/
