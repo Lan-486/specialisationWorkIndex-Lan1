@@ -47,6 +47,12 @@ header {
 }
 
 .mainNavContainer {
+  
+    display: block;
+   
+}
+
+.mainNavContainer {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -64,10 +70,7 @@ nav {
 main {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-main > section {
-    width: 100%;
+    align-items: center;
 }
 
 aside {
@@ -162,4 +165,51 @@ body a:visited {
 body a:hover,
 body a:focus {
     color: var(--heading-colour);
+}
+
+.prototype-card + .prototype-card {
+    margin-block-start: 1.5rem;
+}
+
+.prototype-card h3,
+section h2 {
+    margin-block-end: 1rem;
+}
+
+table {
+    width: 100%;
+    max-width: 700px;
+    table-layout: fixed;
+}
+
+th,
+td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.25rem 0.5rem;
+    overflow-wrap: anywhere;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 20%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 30%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 30%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 20%;
+}
+
+main > section + section {
+    margin-block-start: 2rem;
 }
