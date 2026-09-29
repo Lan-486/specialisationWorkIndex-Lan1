@@ -210,6 +210,22 @@ td:nth-child(4) {
     width: 20%;
 }
 
+
+/* Add space between different sections */
+main > section {
+  margin-bottom: 2rem;
+}
+
+/* Add extra space before every section after the first one */
 main > section + section {
-    margin-block-start: 2rem;
+  margin-top: 2rem;
+}
+
+.resources {
+  margin-top: 3rem;
+}
+
+/* Add space between the area introduction and the first prototype */
+section > h2 + p {
+  margin-bottom: 2rem;
 }

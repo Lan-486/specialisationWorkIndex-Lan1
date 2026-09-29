@@ -38,7 +38,7 @@
     <main>
     <p class="intro">
       This page documents six parallel prototypes developed for
-      <em>Aquarium with Me</em>, a browser-based audio instrument designed
+      <em>Aquarium with Me</em>, a browser-based dynamic Soundtrack designed
       to create a calm and continuously changing underwater sound environment.
     </p>
 
@@ -47,11 +47,19 @@
       <h2>Design Area 1: Drag Interaction and Layout</h2>
 
       <p>
-        This area explores the spatial relationship between the draggable sound
-        elements and the aquarium drop zone. Each element represents a different
-        sound layer, and placing it in the aquarium activates that sound.
-        The interaction remains the same while the layout changes between the
-        three prototypes.
+        For the first design area, I focused on the layout of the drag-and-drop
+         interaction. In Aquarium with Me, each draggable element represents a 
+         different sound layer, while the drop zone represents the aquarium where 
+         the sound becomes active. I kept the basic interaction consistent across 
+         all three prototypes so that the main difference would come from the layout
+          rather than from a completely different interaction.
+
+        I wanted to explore whether the position of the controls and the aquarium
+         would change how users understand the relationship between them. I was also
+          interested in whether the user would see the draggable elements as sound 
+          controls, objects that belong in the aquarium, or simply buttons that need 
+          to be moved. The three layouts test different directions of movement: from 
+          left to right, from below towards the centre, and from above downwards.
       </p>
 
       <div class="prototype-grid">
@@ -463,10 +471,21 @@
       <h2>Design Area 2: Random Bubble Generation</h2>
 
       <p>
-        This area explores how bubbles are generated through the space bar.
-        The prototypes use the extended technique
-        <code>Math.random()</code> to vary bubble size, position, timing and
-        movement.
+        For the second design area, I focused on the generation and movement of
+         bubbles. The bubbles are not just decorative elements; they provide a 
+         visual response to the user's interaction with the audio instrument. I
+          wanted the aquarium to feel active and continuously changing without 
+          requiring the user to control many buttons or sliders.
+
+        I used the space bar as the main input because it is easy to press and 
+        allows the user to interact without moving the mouse around the page. I 
+        also used Math.random() as my extended technique. It controls different
+         values such as the bubble size, horizontal position, movement direction and animation duration. This means that the result changes each time the user interacts with the prototype.
+
+        The three prototypes explore different levels of activity. The first 
+        focuses on a simple one-to-one response, the second creates a larger 
+        group of bubbles in a focused central area, and the third connects the
+         amount of visual activity to how long the user holds the space bar.
       </p>
 
       <div class="prototype-grid">
@@ -475,9 +494,13 @@
           <h3>Prototype 1: SingleRandom Bubble</h3>
 
           <p>
-            Each press of the space bar creates a small random bubble.
-            The bubbles appear with slight delays and use random values for their
-            size, position and animation duration.
+           In Prototype 1, each press of the space bar creates one bubble.
+            I designed this version as a simple starting point so that one 
+            user action creates one clear visual response.
+
+        The bubble still changes its size, position and animation duration 
+        using Math.random(). This keeps the interaction easy to understand
+         while making each bubble slightly different.
           </p>
 
           <a class="prototype-link"
@@ -630,9 +653,22 @@
           <h3>Prototype 2: Centred Bubble Movement</h3>
 
           <p>
-            Bubbles rise through a central area with random horizontal offsets.
-            This keeps the interaction visually focused while avoiding a rigid
-            straight line of bubbles.
+           In Prototype 2, one press of the space bar creates several bubbles that 
+           rise through the central area of the aquarium. I changed the number of 
+           bubbles because I wanted to create a stronger visual response than in 
+           Prototype 1. Instead of producing only one bubble, the interaction creates 
+           a small group that appears over a short period of time.
+
+         I placed the bubbles around the centre rather than across the entire screen. 
+         This keeps the main activity connected to the centre of the aquarium and makes
+          it easier to see the relationship between the bubbles and the interactive space.
+           However, I did not want the bubbles to form one perfectly straight line, because
+            that would make the movement feel too mechanical.
+
+         For this reason, I added a random horizontal offset to each bubble. The 
+         bubbles still move upwards through a similar area, but their positions 
+         change slightly each time. This version focuses on creating a more concentrated
+          and visually layered bubble movement.
           </p>
 
           <a class="prototype-link"
@@ -803,9 +839,21 @@
           <h3>Prototype 3: Press and Continuous Stream</h3>
 
           <p>
-            A short press creates random bubbles, while holding the space bar creates
-            a continuous stream. This prototype explores the relationship between
-            input duration and visual activity.
+            In Prototype 3, a short press of the space bar creates bubbles, while holding
+             the space bar creates a continuous stream. I designed this version to make the
+              amount of visual activity respond to the length of the user's input. A short 
+              interaction creates a small moment of movement, while a longer interaction 
+              produces a more active and crowded aquarium.
+
+           This changes the space bar from a simple trigger into a more expressive control.
+            The user can decide how much activity they want by changing how long they hold 
+            the key. I wanted the interaction to feel connected to the user's physical action,
+             so the bubbles continue appearing only while the space bar is being held.
+
+            The timing between bubbles is also slightly randomised, which prevents the stream
+             from feeling like a fixed mechanical sequence. The purpose of this prototype was 
+             to explore whether holding an input could create a stronger sense of control and 
+             rhythm within the aquarium.
           </p>
 
           <a class="prototype-link"
@@ -955,13 +1003,21 @@
 
       </div>
 
-      <p class="reference">
-        Extended technique reference:
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random"
-           target="_blank">
-          MDN Math.random()
-        </a>
-      </p>
+<section class="resources">
+  <h2>Peer User Testing</h2>
+
+  <p>
+    Please complete the peer user testing form after trying the prototypes.
+  </p>
+
+  <a
+    href="https://forms.cloud.microsoft/r/v4ibdYdJWn"
+    target="_blank"
+    rel="noopener">
+    Open Peer User Testing Form
+  </a>
+</section>
+
     </section>
     </main>
 
